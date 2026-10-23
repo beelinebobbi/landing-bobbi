@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bobbi Bjornholt — Links</title>
+  <meta name="description" content="Bobbi Bjornholt — UX designer and visual artist. Portfolio, Beeline Digital, and art on Instagram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f1e9;
+      --bg-glow: #f1dfb8;
+      --surface: #fffdf9;
+      --surface-hover: #ffffff;
+      --ink: #1f1b16;
+      --ink-soft: #6b6257;
+      --line: #e4dacb;
+      --accent: #c9851c;
+      --accent-soft: #f6e6c6;
+      --shadow: 0 1px 2px rgba(31, 27, 22, .05), 0 4px 14px rgba(31, 27, 22, .06);
+      --shadow-hover: 0 2px 4px rgba(31, 27, 22, .06), 0 10px 28px rgba(31, 27, 22, .10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16130f;
+        --bg-glow: #3a2b12;
+        --surface: #221e18;
+        --surface-hover: #2a251e;
+        --ink: #f3ece2;
+        --ink-soft: #a89e90;
+        --line: #352f27;
+        --accent: #e8a640;
+        --accent-soft: #3d2f17;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+        --shadow-hover: 0 8px 24px rgba(0, 0, 0, .4);
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(60rem 30rem at 50% -10rem, var(--bg-glow), transparent 70%),
+        var(--bg);
+      display: flex;
+      justify-content: center;
+      padding: 4.5rem 1rem 3rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 30rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--accent-soft);
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+    }
+    /* Zoom in on the face of the South Park avatar */
+    .face {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 46% 50%;
+      transform: scale(1.35);
+      transform-origin: 46% 50%;
+    }
+
+    h1 {
+      margin-top: 1.4rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.75rem, 6vw, 2.1rem);
+      letter-spacing: -.01em;
+      line-height: 1.1;
+    }
+
+    .tagline {
+      margin-top: .55rem;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      margin-top: 2.25rem;
+      display: grid;
+      gap: .85rem;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .9rem 1.1rem .9rem .9rem;
+      text-decoration: none;
+      color: inherit;
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .link:hover {
+      transform: translateY(-2px);
+      background: var(--surface-hover);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+    .link:active { transform: translateY(0); }
+    .link:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .icon {
+      flex: none;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: .75rem;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: var(--accent-soft);
+    }
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .icon .face { transform: scale(2.1); }
+    .icon svg { width: 1.35rem; height: 1.35rem; color: var(--accent); }
+    .icon.round { border-radius: 50%; background: none; }
+    .icon.round img { object-fit: contain; transform: scale(1.12); }
+
+    .text { flex: 1; min-width: 0; }
+    .label {
+      display: block;
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+    .url {
+      display: block;
+      margin-top: .1rem;
+      color: var(--ink-soft);
+      font-size: .875rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .arrow {
+      flex: none;
+      width: 1.1rem;
+      height: 1.1rem;
+      color: var(--ink-soft);
+      transition: transform .18s ease, color .18s ease;
+    }
+    .link:hover .arrow { transform: translate(2px, -2px); color: var(--accent); }
+
+    footer {
+      margin-top: 3rem;
+      color: var(--ink-soft);
+      font-size: .8rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .link, .arrow { transition: none; }
+      .link:hover { transform: none; }
+      .link:hover .arrow { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="avatar">
+      <img class="face" src="images/southpark-profile.png" alt="Cartoon avatar of Bobbi">
+    </div>
+    <h1>Bobbi Bjornholt</h1>
+    <p class="tagline">UX &amp; front-end designer · Visual artist</p>
+
+    <ul>
+      <li>
+        <a class="link" href="https://bobbibjornholt.com" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <img class="face" src="images/southpark-profile.png" alt="">
+          </span>
+          <span class="text">
+            <span class="label">Portfolio</span>
+            <span class="url">bobbibjornholt.com</span>
+          </span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://www.linkedin.com/in/bobbibjornholt/" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <img src="images/linkedin.png" alt="">
+          </span>
+          <span class="text">
+            <span class="label">LinkedIn</span>
+            <span class="url">linkedin.com/in/bobbibjornholt</span>
+          </span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://beelinedigital.ca" target="_blank" rel="noopener">
+          <span class="icon round" aria-hidden="true">
+            <img src="images/beeline-bee.png" alt="">
+          </span>
+          <span class="text">
+            <span class="label">Beeline Digital</span>
+            <span class="url">beelinedigital.ca</span>
+          </span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://www.instagram.com/bobbi.bjornholt.arts/" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <img src="images/sunflowers-thumb.jpg" alt="">
+          </span>
+          <span class="text">
+            <span class="label">Art on Instagram</span>
+            <span class="url">@bobbi.bjornholt.arts</span>
+          </span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </li>
+    </ul>
+
+    <footer>© <span id="y">2026</span> Bobbi Bjornholt</footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
